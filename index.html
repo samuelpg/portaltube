@@ -39,7 +39,7 @@
       </div>
     </div>
     <div id="fav" class="home-category mx-auto">
-      <h4><i class="fa fa-heart"></i> Favsx</h4>
+      <h4><i class="fa fa-heart"></i> Favs</h4>
       <div>
 
       </div>
@@ -139,19 +139,19 @@
               <div class="form-group row">
                 <label for="video-title" class="control-label col-2">Title</label>
                 <div class="col-10">
-                  <input type="text" name="video-title" id="video-title" class="form-control" />
+                  <input type="text" name="video-title" id="video-title-u" class="form-control" />
                 </div>
               </div>
               <div class="form-group row">
                 <label for="video-title" class="control-label col-2">Description</label>
                 <div class="col-10">
-                  <textarea name="video-desc" id="video-desc" class="form-control"></textarea>
+                  <textarea name="video-desc" id="video-desc-u" class="form-control"></textarea>
                 </div>
               </div>
               <div class="form-group row">
                 <label for="video-category" class="control-label col-2">categories</label>
                 <div class="col-10">
-                  <select class="form-control" id="exampleSelect1">
+                  <select class="form-control" id="video-category-u">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -163,15 +163,20 @@
               <div class="form-group row">
                 <label for="video-category" class="control-label col-2">video file</label>
                 <div class="col-10">
-                  <input type="file" accept="video/x-msvideo" id="video-video" />
+                  <input type="file" accept="video" id="video-video-u" />
                 </div>
               </div>
-              <button id="upload" class="btn btn-info">Upload</button>
+              <button id="upload-video" class="btn btn-info">Upload</button>
+
             </div>
           </div>
           <div class="modal-footer">
-            
-          </div>
+              <div class="progress full-width">
+                <div id="upload-progress" class="progress-bar progress-bar-striped progress-bar-animated custom-color" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+              <button disabled class="btn btn-danger" id="cancel-upload" onclick="cancelUpload()">Cancel</button>
+              <button hidden class="btn btn-danger" id="retry-upload" onclick="retryUpload()">Retry</button>
+              <button hidden data-dismiss="modal" id="done-upload" class="btn btn-success" onclick="resetUploading(true)">Done!</button>
           </div>
         </div>
       </div>
