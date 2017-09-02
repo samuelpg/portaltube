@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>portaltube</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/bootstrap.css" />
+    <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <!-- Nav Bar -->
+    <nav class="navbar navrow navbar-expand-lg navbar-light justify-content-between">
+      <a class="nav-brand">
+        <img src="./img/method-draw-image.svg" class="logo" />
+      </a>
+      <form class="form-inline mx-auto">
+        <input type="text" class="form-control mr-sm-2 search-bar" placeholder="search"/>
+        <button type="submit" class="btn btn-outline-info my-2 my-sm-0"><i class="fa fa-search"></i></button>
+      </form>
+      <div id="logged-out" hidden>
+        <button id="sign-up" type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#signup-modal"><i class="fa fa-user-plus"></i> Sign Up</button>
+        <button id="log-in" class="btn btn-outline-info" data-toggle="modal" data-target="#login-modal"><i class="fa fa-sign-in"></i> Log In</button>
+      </div>
+      <div id="logged-in" >
+        <button id="upload" class="btn btn-outline-info" data-toggle="modal" data-target="#upload-modal"><i class="fa fa-upload"></i> Upload</button>
+        <button id="log-out" class="btn btn-outline-info"><i class="fa fa-log-out"></i> Log Out</button>
+      </div>
+    </nav>
+    <div id="hot" class="home-category mx-auto">
+      <h4><i class="fa fa-fire"></i> Popular</h4>
+      <div class="video-container">
+
+      </div>
+    </div>
+    <div id="new" class="home-category mx-auto">
+      <h4><i class="fa fa-plus"></i> New</h4>
+      <div>
+
+      </div>
+    </div>
+    <div id="fav" class="home-category mx-auto">
+      <h4><i class="fa fa-heart"></i> Favsx</h4>
+      <div>
+
+      </div>
+    </div>
+    <!-- template -->
+    <div id="video_thumbnail" class="video-thumbnail-home" hidden>
+      <a href="#"><img src="./img/Zhk2rX4.jpg"/></a><br />
+      <a class="video-title" href="#">AMAZING TRICK SHOT</a><br />
+      <span><i class="fa fa-eye"></i> 600</span>
+      <span class="rigth"><i class="fa fa-heart color"></i> 42</span>
+    </div>
+    <!-- signup-modal -->
+    <div id="signup-modal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title"><i class="fa fa-user-plus"></i> Sign Up</h4>
+          </div>
+          <div class="modal-body">
+            <form class="form-horizontal" id="signup-form">
+              <div class="form-group row">
+                <label class="control-label col-1" for="email"><i class="fa fa-envelope "></i></label>
+                <div class="col-11">
+                  <input class="form-control" id="email" name="email" type="email" required placeholder="email" />
+                </div>
+              </div>
+              <div class="form-group row">
+                  <label class="control-label col-1" for="name"><i class="fa fa-user-o"></i></label>
+                <div class="col-11">
+                  <input class="form-control" name="name" id="name" type="text" required placeholder="name"/>
+                </div>
+              </div>
+              <div class="form-group row">
+                  <label class="control-label col-1" for="password"><i class="fa fa-lock"></i></label>
+                <div class="col-11">
+                  <input id="password" class="form-control" name="password" type="password" required placeholder="password" onchange="check(document.getElementById('signup-form'))"/>
+                </div>
+              </div>
+              <!-- <div class="form-group row">
+                  <label class="control-label col-1" for="password-confirmation"><i class="fa fa-lock"></i><i class="fa fa-check-circle-o"></i></label>
+                <div id="pc" class="col-11">
+                  <input id="passwordConfirmation" name="passwordConfirmation" class="form-control" required placeholder="repeat password" type="password" onchange="check(document.getElementById('signup-form'))"/>
+                </div>
+              </div> -->
+              <button type="submit" class="btn btn-info">Sign up</button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            By signing up you accept our terms of use.
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- login-modal-->
+    <div id="login-modal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title"><i class="fa fa-sign-in"></i> Log in</h4>
+          </div>
+          <div class="modal-body">
+            <form class="form-horizontal" id="login-form">
+              <div class="form-group row">
+                <label class="control-label col-1" for="email-login"><i class="fa fa-envelope "></i></label>
+                <div class="col-11">
+                  <input class="form-control" id="email-login" name="email" type="email" required placeholder="email" />
+                </div>
+              </div>
+              <div class="form-group row">
+                  <label class="control-label col-1" for="password-login"><i class="fa fa-lock"></i></label>
+                <div class="col-11">
+                  <input id="password-login" class="form-control" name="password" type="password" required placeholder="password" onchange="check(document.getElementById('signup-form'))"/>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-info">Log in</button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            By loging in you accept our terms of use.
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Upload video modal -->
+    <!-- login-modal-->
+    <div id="upload-modal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title"><i class="fa fa-upload"></i> Upload a video</h4>
+          </div>
+          <div class="modal-body">
+            <div class="form-horizontal">
+              <div class="form-group row">
+                <label for="video-title" class="control-label col-2">Title</label>
+                <div class="col-10">
+                  <input type="text" name="video-title" id="video-title" class="form-control" />
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="video-title" class="control-label col-2">Description</label>
+                <div class="col-10">
+                  <textarea name="video-desc" id="video-desc" class="form-control"></textarea>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="video-category" class="control-label col-2">categories</label>
+                <div class="col-10">
+                  <select class="form-control" id="exampleSelect1">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="video-category" class="control-label col-2">video file</label>
+                <div class="col-10">
+                  <input type="file" accept="video/x-msvideo" id="video-video" />
+                </div>
+              </div>
+              <button id="upload" class="btn btn-info">Upload</button>
+            </div>
+          </div>
+          <div class="modal-footer">
+            
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./js/jquery-3.2.1.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/signup.js"></script>
+  </body>
+</html>

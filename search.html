@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/bootstrap.css" />
+  <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.min.css">
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light justify-content-between">
+      <a class="nav-brand">
+        <img src="./img/method-draw-image.svg" class="logo" />
+      </a>
+      <form class="form-inline mx-auto">
+        <input type="text" class="form-control mr-sm-2 search-bar" placeholder="search"/>
+        <button type="submit" class="btn btn-outline-info my-2 my-sm-0"><i class="fa fa-search"></i></button>
+      </form>
+      <div id="logged-out">
+        <button id="sign-up" class="btn btn-outline-info"><i class="fa fa-user-plus"></i> Sign Up</button>
+        <button id="log-in" class="btn btn-outline-info"><i class="fa fa-sign-in"></i> Log In</button>
+      </div>
+      <div id="logged-in" hidden>
+        <button id="upload" class="btn btn-outline-info"><i class="fa fa-upload"></i> Upload</button>
+        <button id="log-out" class="btn btn-outline-info"><i class="fa fa-log-out"></i> Log Out</button>
+      </div>
+    </nav>
+    <div class="search-results mx-auto" id="search-results">
+      <span id="result-count"><i class="fa fa-search"></i> About 5 results</span>
+      <div id="video-thumbnail-result" class="video-thumbnail-search">
+        <a href="#"><img src="./img/Zhk2rX4.jpg"/></a>
+        <div>
+          <a class="video-title" href="#">AMAZING TRICK SHOT</a>
+          <span><i class="fa fa-eye"></i> 600</span>
+          <span class="rigth"><i class="fa fa-heart color"></i> 42</span>
+        </div>
+      </div>
+      <div id="video-thumbnail-result" class="video-thumbnail-search">
+        <a href="#"><img src="./img/Zhk2rX4.jpg"/></a>
+        <div>
+          <a class="video-title" href="#">AMAZING TRICK SHOT</a>
+          <span><i class="fa fa-eye"></i> 600</span>
+          <span class="rigth"><i class="fa fa-heart color"></i> 42</span>
+        </div>
+      </div>
+      <div id="video-thumbnail-result" class="video-thumbnail-search">
+        <a href="#"><img src="./img/Zhk2rX4.jpg"/></a>
+        <div>
+          <a class="video-title" href="#">AMAZING TRICK SHOT</a>
+          <span><i class="fa fa-eye"></i> 600</span>
+          <span class="rigth"><i class="fa fa-heart color"></i> 42</span>
+        </div>
+      </div>
+      <div id="video-thumbnail-result" class="video-thumbnail-search">
+        <a href="#"><img src="./img/Zhk2rX4.jpg"/></a>
+        <div>
+          <a class="video-title" href="#">AMAZING TRICK SHOT</a>
+          <span><i class="fa fa-eye"></i> 600</span>
+          <span class="rigth"><i class="fa fa-heart color"></i> 42</span>
+        </div>
+      </div>
+    </div>
+    <div id="video-thumbnail" class="video-thumbnail-search" hidden>
+      <a href="#"><img src="./img/Zhk2rX4.jpg"/></a>
+      <div>
+        <a class="video-title" href="#">AMAZING TRICK SHOT</a>
+        <span><i class="fa fa-eye"></i> 600</span>
+        <span class="rigth"><i class="fa fa-heart color"></i> 42</span>
+      </div>
+    </div>
+    <script src="./js/jquery-3.2.1.js" defer></script>
+    <script src="./js/bootstrap.js" defer></script>
+    <script src="./js/app.js" defer></script>
+  </body>
+</html>
